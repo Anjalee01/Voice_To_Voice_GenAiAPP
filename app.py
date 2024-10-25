@@ -2,6 +2,7 @@ import os
 os.environ['GROQ_API_KEY'] = ''
 
 
+
 # Import libraries
 import whisper
 import os
