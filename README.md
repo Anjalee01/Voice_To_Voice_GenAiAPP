@@ -23,7 +23,7 @@ Groq Python client
 2.Install the required dependencies:
 
 ```bash
-pip install gradio whisper gtts groq
+pip install gradio whisper gtts groq```
 
 
 3.Set up your Groq API Key:
