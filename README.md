@@ -16,7 +16,9 @@ Whisper
 gTTS
 Groq Python client
 
-Setup
->pip install gradio whisper gtts groq
->
->
+**Setup**
+Clone or download this repository.
+
+Install the required dependencies:
+
+`pip install gradio whisper gtts groq`
