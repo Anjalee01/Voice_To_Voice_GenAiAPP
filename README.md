@@ -17,7 +17,8 @@ gTTS
 Groq Python client
 
 **Setup**
-Clone or download this repository.
+
+1. Clone or download this repository.
 
 Install the required dependencies:
 
