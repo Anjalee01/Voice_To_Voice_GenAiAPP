@@ -1,75 +1,64 @@
-# Voice To Voice with LLM Response 
+# SOS Emergency App for Terminally Ill Patients
 
-This app uses Whisper for speech recognition, Groq for generating chatbot responses, and gTTS for text-to-speech synthesis. Users can speak into the microphone, and the app will transcribe the speech, send it to a large language model (LLM) for a response, and then play the LLM’s response as speech.
+## Overview
+The **SOS Emergency App** is a Streamlit-based application designed to help terminally ill patients send an emergency alert when they need urgent medical assistance. The app utilizes the **DeepSeek R1** model to generate an SOS message and sends an alert to emergency services via an API.
 
-**Features**
+## Features
+- **SOS Alert Button**: Instantly triggers an emergency alert.
+- **AI-Generated SOS Message**: Uses the DeepSeek R1 model to create a distress message.
+- **Emergency API Integration**: Sends alerts to a designated emergency service endpoint.
+- **Secure API Communication**: Utilizes API keys stored securely in a `.env` file.
 
-Speech Recognition: Convert spoken audio into text using Whisper.
-Chatbot Responses: Get responses from an LLM powered by Groq.
-Text-to-Speech: Convert the chatbot's response into speech using Google Text-to-Speech (gTTS).
-Real-time Interaction: The app supports real-time voice-based interaction using Gradio.
+## Installation
+### Prerequisites
+Ensure you have the following installed:
+- Python 3.8+
+- pip (Python package manager)
+- Streamlit
+- `requests` and `transformers` libraries
 
-**Requirements**
-Python 3.x
-Gradio
-Whisper
-gTTS
-Groq Python client
+### Clone the Repository
+```sh
+git clone <repository-url>
+cd sos-emergency-app
+```
 
-**Setup**
+### Install Dependencies
+```sh
+pip install -r requirements.txt
+```
 
-1. Clone or download this repository.
+### Set Up Environment Variables
+Create a `.env` file in the project directory and add your API keys:
+```sh
+HUGGINGFACE_API_KEY=your_huggingface_api_key
+EMERGENCY_API_ENDPOINT=your_emergency_api_endpoint
+```
 
-2.Install the required dependencies:
+## Usage
+Run the Streamlit app with the following command:
+```sh
+streamlit run app.py
+```
 
-```bash
-pip install gradio whisper gtts groq```
+## How It Works
+1. Click the **SOS** button.
+2. The app generates an emergency message using the **DeepSeek R1** model.
+3. The generated message is sent to the emergency services API.
+4. Users receive confirmation that help is on the way or an error message if the request fails.
 
+## Dependencies
+- `streamlit`
+- `requests`
+- `transformers`
+- `dotenv`
 
-3.Set up your Groq API Key:
+## Contributing
+Feel free to contribute to this project by submitting a pull request or reporting issues.
 
--Get your Groq API key and save it as an environment variable.
--In the script, you can set the key directly or load it from a .env file:
+## License
+This project is licensed under the MIT License.
 
-```bash
-export GROQ_API_KEY="your_api_key_here"
+## Contact
+For any inquiries, reach out to [your contact information].
 
-4.(Optional) Download the Whisper model you want to use. In the script, it loads the "base" model, but you can change it to other available models (e.g., "small", "medium", etc.).
-
-
-**Usage**
-
-1.Launch the app:
-
-```bash
-python app.py
-
-2.The Gradio interface will open in your browser. You can speak into the microphone or upload an audio file.
-
-3.The app will transcribe your speech, send it to the Groq API for a response, and play the response as speech.
-
-**Example Interaction**
-
-1.User: "What's the weather like today?"
-2.App:
--Transcribes speech: "What's the weather like today?"
--Sends query to Groq: "What's the weather like today?"
--Groq responds: "Today's weather is sunny with a high of 75°F."
--Converts response to speech and plays it.
-
-
-**Code Explanation**
-
--Whisper: Used to transcribe spoken audio into text.
--Groq: A large language model (LLM) that generates responses to user input.
--gTTS: Converts the text response from Groq into audio, which is then played back.
--Gradio: Provides an interactive interface for users to interact with the chatbot via audio input and output.
-
-
-**Notes**
--Ensure you have a stable internet connection to interact with the Groq API.
--Adjust the Whisper model as needed depending on the desired accuracy and performance.
-
-
-**License**
-This project is licensed under the MIT License - see the LICENSE file for details.
